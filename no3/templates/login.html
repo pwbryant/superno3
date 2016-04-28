@@ -1,3 +1,15 @@
 <html>
-	<title>Login Page</title>
+	<head>
+		<title>Login Page</title>
+	</head>
+	<body>
+		<form action="/login/" method="post">
+			{% csrf_token %}
+			<font id="id_user_font">User:</font><br>
+			<input id="id_user" type="text" name="user"><br><br>
+			<font id="id_password_font">Password:</font><br>
+			<input id="id_password" type="text" name="password"><br>
+			<input id="id_submit" type="submit" value="Login">
+		</form>
+	</body>
 </html>

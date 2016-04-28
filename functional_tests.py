@@ -16,9 +16,14 @@ class NewVisitorTest(unittest.TestCase):
         #temp scenarios so goes to check out the Waterborne web-app
         self.browser.get("http://localhost:8000")
         
-        #First thing the User sees is a login page
-        self.assertIn("User:", self.browser.title)
+        self.assertIn("NO3",self.browser.title)
+        header_text = self.browser.find_element_by_tag_name('h1').text
+        self.assertIn("NO3",header_text)
+
+        data = self.browser.execute_script("return dataset")
+        self.assertIn('no3', data[0].keys())     
         self.fail("Finish the test!")
+
 
 
 if __name__ == '__main__':
